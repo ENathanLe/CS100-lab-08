@@ -31,12 +31,12 @@ int main() {
 	it.current_node()->accept(v, it.current_index());
     }
     cout << v->PrintLaTeX(minus) << endl;
+    delete minus;
 
     Base* one = new Op(1);
     Base* five = new Op(5);
     Base* zero = new Op(0);
     Base* sub = new Sub(five, zero);
-    delete add;
     add = new Add(one, sub);
     delete v;
     v = new LatexVisitor();
@@ -45,8 +45,7 @@ int main() {
     }
     cout << add->stringify() << "=>" << v->PrintLaTeX(add) << endl;
 
-
-    delete minus;
     delete add;
+    delete v;
     return 0;
 }
