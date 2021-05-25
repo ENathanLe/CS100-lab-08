@@ -2,6 +2,7 @@
 #define __MOCK_OP_HPP__
 
 #include "base.hpp"
+#include "rand.hpp"
 
 class EightOpMock : public Base {
     public:

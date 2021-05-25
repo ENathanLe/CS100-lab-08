@@ -1,6 +1,8 @@
 #include "visitor.hpp"
 #include <iostream>
 #include <string>
+#include "op.hpp"
+#include "rand.hpp"
 
 void LatexVisitor::visit_op(Op* node) {
 	runningEq += "{" + node->stringify() + "}";
