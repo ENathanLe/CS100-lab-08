@@ -3,6 +3,7 @@
 
 #include "base.hpp"
 #include <math.h>
+#include "visitor.hpp"
 
 using namespace std;
 

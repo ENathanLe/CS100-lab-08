@@ -4,6 +4,7 @@
 #include "base.hpp"
 #include <math.h>
 #include <iostream>
+#include "visitor.hpp"
 class Pow : public Base {
     public:
 	Pow(Base* op1, Base* op2) : Base(), operand1(op1), operand2(op2) {}

@@ -2,6 +2,7 @@
 #define __ADD_HPP__
 
 #include "base.hpp"
+#include "visitor.hpp"
 
 using namespace std;
 
