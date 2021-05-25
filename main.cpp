@@ -24,7 +24,7 @@ int main() {
     Base* minus = new Sub(add, two);
     
     Visitor* v = new LatexVisitor();
-    std::string str;
+    std::string str = "";
     for(Iterator it(minus); !it.is_done(); it.next()){
 	str += it.current_node().accept(v, it.current_index());
     }
