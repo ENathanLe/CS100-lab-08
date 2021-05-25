@@ -2,7 +2,15 @@
 #define __LATEX_VISITOR_TEST_HPP__
 
 #include "gtest/gtest.h"
-
+#include "add.hpp"
+#include "sub.hpp"
+#include "mult.hpp"
+#include "div.hpp"
+#include "pow.hpp"
+#include "visitor.hpp"
+#include "op.hpp"
+#include "rand.hpp" 
+#include "mockop.hpp"
 
 TEST(LatexTest, AddBegin) {
     Add* node;
@@ -49,7 +57,7 @@ TEST(LatexTest, PowBegin) {
 TEST(LatexTest, PowMiddle) {
     Pow* node;
     LatexVisitor test;
-    EXPECT_EQ(test.visit_add_begin(node), "^");
+    EXPECT_EQ(test.visit_pow_middle(node), "^");
 }
 
 TEST(LatexTest, Op) {
@@ -59,7 +67,7 @@ TEST(LatexTest, Op) {
 }
 
 TEST(LatexTest, Rand) {
-    Op* node = new MockRandEight();
+    Rand* node = new MockRandEight();
     LatexVisitor test;
     EXPECT_EQ(test.visit_rand(node), "{8.0}");
 }

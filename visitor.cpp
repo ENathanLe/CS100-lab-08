@@ -1,69 +1,71 @@
 #include "visitor.hpp"
 #include <iostream>
+#include <string>
 
-void LatexVisitor::visit_op(Op* node) {
-	cout << "{" << node->stringify() << "}";
+std::string LatexVisitor::visit_op(Op* node) {
+	return "{" + node->stringify() + "}";
+	
 }
 
-void LatexVisitor::visit_rand(Rand* node) {
-	cout << "{" << node->stringify() << "}";
+std::string LatexVisitor::visit_rand(Rand* node) {
+	return "{" + node->stringify() + "}";
 }
 
-void LatexVisitor::visit_add_begin(Add* node) {
-	cout << "{(";
+std::string LatexVisitor::visit_add_begin(Add* node) {
+	return "{(";
 }
 
-void Latex_Visitor::visit_add_middle(Add* node) {
-	cout << "+";
+std::string LatexVisitor::visit_add_middle(Add* node) {
+	return "+";
 }
 
-void Latex_Visitor::visit_add_end(Add* node) {
-	cout << ")}";
+std::string LatexVisitor::visit_add_end(Add* node) {
+	return ")}";
 }
 
-void Latex_Visitor::visit_sub_begin(Sub* node) {
-	cout << "{(";
+std::string LatexVisitor::visit_sub_begin(Sub* node) {
+	return "{(";
 }
 
-void Latex_Visitor::visit_sub_middle(Sub* node) {
-	cout << "-";
+std::string LatexVisitor::visit_sub_middle(Sub* node) {
+	return "-";
 }
 
-void Latex_Visitor::visit_sub_end(Sub* node) {
-	cout << ")}";
+std::string LatexVisitor::visit_sub_end(Sub* node) {
+	return ")}";
 }
 
-void Latex_Visitor::visit_mult_begin(Mult* node) {
-	cout << "{(";
+std::string LatexVisitor::visit_mult_begin(Mult* node) {
+	return "{(";
 }
 
-void Latex_Visitor::visit_mult_middle(Mult* node) {
-	cout << "\cdot";
+std::string LatexVisitor::visit_mult_middle(Mult* node) {
+	return "\\cdot";
 }
 
-void Latex_Visitor::visit_mult_end(Mult* node) {
-	cout << ")}";
+std::string LatexVisitor::visit_mult_end(Mult* node) {
+	return ")}";
 }
 
-void Latex_Visitor::visit_div_begin(Div* node) {
-	cout << "{\frac";
+std::string LatexVisitor::visit_div_begin(Div* node) {
+	return "{\frac";
 }
 
-void Latex_Visitor::visit_div_middle(Div* node) {}
+std::string LatexVisitor::visit_div_middle(Div* node) { return "";}
 
-void Latex_Visitor::visit_div_end(Div* node) {
-	cout << "}";
+std::string LatexVisitor::visit_div_end(Div* node) {
+	return "}";
 }
 
-void Latex_Visitor::visit_pow_begin(Pow* node) {
-	cout << "{(";
+std::string LatexVisitor::visit_pow_begin(Pow* node) {
+	return "{(";
 }
 
-void Latex_Visitor::visit_pow_middle(Pow* node) {
-	cout << "^";
+std::string LatexVisitor::visit_pow_middle(Pow* node) {
+	return "^";
 }
 
-void Latex_Visitor::visit_pow_end(Pow* node) {
-	cout << ")}";
+std::string LatexVisitor::visit_pow_end(Pow* node) {
+	return ")}";
 }
 
