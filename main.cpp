@@ -5,7 +5,10 @@
 #include "mult.hpp"
 #include "add.hpp"
 #include "sub.hpp"
-
+#include "pow.hpp"
+#include "rand.hpp"
+#include "iterator.hpp"
+#include "visitor.hpp"
 
 int main() {
     // This is a very basic main, and being able to correctly execute this main
@@ -18,6 +21,11 @@ int main() {
     Base* mult = new Mult(seven, four);
     Base* add = new Add(three, mult);
     Base* minus = new Sub(add, two);
+    
+    Visitor* v = new LatexVisitor();
+    for(Iterator it(minus); !it.is_done(); it.next()){
+	it.current_node().accept(v, it.current_index());
+    }
 
     std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
     delete minus;
