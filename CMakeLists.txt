@@ -11,6 +11,7 @@ ADD_EXECUTABLE(test
 
 ADD_EXECUTABLE(lab
     main.cpp
+    visitor.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
