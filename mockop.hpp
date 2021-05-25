@@ -42,4 +42,19 @@ class ZeroOpMock : public Base {
 	virtual double evaluate() { return 0; }
 	virtual std::string stringify() { return "0"; }
 };
+
+class MockOpEight : public Op {
+    public:
+	MockOpEight() {}
+	double evaluate() { return 8; }
+	std::string stringify() { return "{8.0}"; }
+};
+
+class MockRandEight : public Rand {
+    public:
+	MockRandEight() {}
+	double evaluate() {return 8; }
+	std::string stringify() { return "{8.0}"; }
+};
+
 #endif //__MOCK_OP_HPP__
