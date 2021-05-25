@@ -21,6 +21,8 @@ class Op : public Base {
 		return truncStr;
 	}
 	~Op() = default;
+	int number_of_children() { return 0; }
+	Base* get_child(int i) { return nullptr; }
     protected:
 	double value;
 };
