@@ -2,6 +2,7 @@
 #define __VISITOR_HPP__
 
 #include <string>
+class Base;
 class Op;
 class Rand;
 class Add;
