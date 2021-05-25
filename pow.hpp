@@ -18,6 +18,13 @@ class Pow : public Base {
 		delete operand2;
 	    }
 	}
+
+        int number_of_children() { return 2; }
+                
+        Base* get_child(int i) { //i is either 0 or 1
+               if(!i) { return operand1; }
+               else { return operand2; }
+       	} 
     private:
 	Base* operand1;
 	Base* operand2;

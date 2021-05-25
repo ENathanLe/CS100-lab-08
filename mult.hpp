@@ -24,6 +24,13 @@ class Mult : public Base {
 		double evaluate() {return p1->evaluate() * p2->evaluate();}
 
 		string stringify() {return "(" + p1->stringify() + " * " + p2->stringify() + ")";}
+
+                int number_of_children() { return 2; }
+                
+                Base* get_child(int i) { //i is either 0 or 1
+                        if(!i) { return p1; }
+                        else { return p2; }
+                }
 };
 
 #endif
