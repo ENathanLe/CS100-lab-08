@@ -18,6 +18,19 @@ class Pow : public Base {
 		delete operand2;
 	    }
 	}
+
+        int number_of_children() { return 2; }
+                
+        Base* get_child(int i) { //i is either 0 or 1
+               if(!i) { return operand1; }
+               else { return operand2; }
+       	} 
+		std::string accept(Visitor* visitor, int index) {
+			if(index==0) { return visitor->visit_pow_begin(this*); }
+			else if(index==1) { return visitor->visit_pow_middle(this*); }
+			else if(index==2) { return visitor->visit_pow_end(this*); }
+			//else
+		}
     private:
 	Base* operand1;
 	Base* operand2;
