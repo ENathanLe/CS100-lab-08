@@ -8,6 +8,7 @@
 #include "div.hpp"
 #include "pow.hpp"
 #include "visitor.hpp"
+#include "latex_visitor.hpp"
 #include "op.hpp"
 #include "rand.hpp" 
 #include "mockop.hpp"

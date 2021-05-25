@@ -2,6 +2,7 @@
 #define _children_test_hpp_
 
 #include "op.hpp"
+#include "rand.hpp"
 #include "add.hpp"
 #include "sub.hpp"
 #include "mult.hpp"
@@ -18,6 +19,18 @@ TEST(OpTest, OpGetChildNum) { //op
 
 TEST(OpTest, OpGetChild) {
 	Base* val1 = new Op(1);
+	EXPECT_EQ(val1->get_child(0), nullptr);	
+	delete val1;
+}
+
+TEST(RandTest, RandGetChildNum) { //rand
+	Base* val1 = new Rand();
+	EXPECT_EQ(val1->number_of_children(), 0);	
+	delete val1;
+}
+
+TEST(RandTest, RandGetChild) {
+	Base* val1 = Rand();
 	EXPECT_EQ(val1->get_child(0), nullptr);	
 	delete val1;
 }

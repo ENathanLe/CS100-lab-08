@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "visitor.hpp"
 #include "base.hpp"
 #include "op.hpp"
 #include "mult.hpp"

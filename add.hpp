@@ -33,9 +33,9 @@ class Add : public Base {
 		}
 		
 		std::string accept(Visitor* visitor, int index) {
-			if(index==0) { return visitor->visit_add_begin(this*); }
-			else if(index==1) { return visitor->visit_add_middle(this*); }
-			else if(index==2) { return visitor->visit_add_end(this*); }
+			if(index==0) { return visitor->visit_add_begin(this); }
+			else if(index==1) { return visitor->visit_add_middle(this); }
+			else if(index==2) { return visitor->visit_add_end(this); }
 			//else
 		}
 };

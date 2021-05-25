@@ -33,9 +33,9 @@ class Div : public Base {
                         else { return p2; }
                 }
 		std::string accept(Visitor* visitor, int index) {
-			if(index==0) { return visitor->visit_div_begin(this*); }
-			else if(index==1) { return visitor->visit_div_middle(this*); }
-			else if(index==2) { return visitor->visit_div_end(this*); }
+			if(index==0) { return visitor->visit_div_begin(this); }
+			else if(index==1) { return visitor->visit_div_middle(this); }
+			else if(index==2) { return visitor->visit_div_end(this); }
 			//else
 		}
 };

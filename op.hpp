@@ -24,7 +24,7 @@ class Op : public Base {
 	int number_of_children() { return 0; }
 	Base* get_child(int i) { return nullptr; }
 	std::string accept(Visitor* visitor, int index) {
-		return visitor->visit_op(this*);
+		return visitor->visit_op(this);
 	}
     protected:
 	double value;
