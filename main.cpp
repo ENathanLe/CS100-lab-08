@@ -9,6 +9,7 @@
 #include "rand.hpp"
 #include "iterator.hpp"
 #include "visitor.hpp"
+#include <string>
 
 int main() {
     // This is a very basic main, and being able to correctly execute this main
@@ -23,9 +24,11 @@ int main() {
     Base* minus = new Sub(add, two);
     
     Visitor* v = new LatexVisitor();
+    std::string str;
     for(Iterator it(minus); !it.is_done(); it.next()){
-	it.current_node().accept(v, it.current_index());
+	str += it.current_node().accept(v, it.current_index());
     }
+    cout << "$" << str << "$" << endl;
 
     std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
     delete minus;
