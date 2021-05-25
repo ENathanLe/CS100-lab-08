@@ -13,6 +13,7 @@ ADD_EXECUTABLE(test
     op.cpp
     pow.cpp
     sub.cpp
+    iterator.cpp
 )
 
 ADD_EXECUTABLE(lab
@@ -24,6 +25,7 @@ ADD_EXECUTABLE(lab
     op.cpp
     pow.cpp
     sub.cpp
+    iterator.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)

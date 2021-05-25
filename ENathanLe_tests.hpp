@@ -7,6 +7,7 @@
 #include "mult.hpp"
 #include "div.hpp"
 #include "rand.hpp"
+#include "iterator.hpp"
 
 TEST(ENathanLeTest, RandNegEval) {
 	srand(1);
@@ -60,9 +61,9 @@ TEST(IntegrateVisitorTests, commonCase) {
 	std::string str = "";
 	Visitor* v = new LatexVisitor();
 	for(Iterator it(pow); !it.is_done(); it.next()){
-	    str += it.current_node().accept(v, it.current_index());
+	    it.current_node()->accept(v, it.current_index());
 	}
-	EXPECT_EQ("$" + str + "$", "${({({4}+{-1}^{2})})}$");
+	EXPECT_EQ(v->PrintLaTeX(pow), "${({({4}+{-1})}^{2})}$");
 }
 
 TEST(IntegrateVisitorTests, multDiv) {
@@ -74,9 +75,9 @@ TEST(IntegrateVisitorTests, multDiv) {
         std::string str = "";
         Visitor* v = new LatexVisitor();
         for(Iterator it(div); !it.is_done(); it.next()){
-            str += it.current_node().accept(v, it.current_index());
+            it.current_node()->accept(v, it.current_index());
         }
-        EXPECT_EQ("$" + str + "$", "${\frac{({4}\cdot{3})}{2})}$");
+        EXPECT_EQ(v->PrintLaTeX(div), "${\frac{({4}\\cdot{3})}{2}}$");
 }
 
 
