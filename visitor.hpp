@@ -38,6 +38,7 @@ class Visitor{
         virtual void visit_pow_begin(Pow* node) = 0;
         virtual void visit_pow_middle(Pow* node) = 0;
         virtual void visit_pow_end(Pow* node) = 0;
+	virtual std::string PrintLaTeX(Base* node) {}
 };
 
 class LatexVisitor : public Visitor{
