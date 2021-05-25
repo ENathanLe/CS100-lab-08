@@ -31,12 +31,7 @@ class Mult : public Base {
                         if(!i) { return p1; }
                         else { return p2; }
                 }
-		std::string accept(Visitor* visitor, int index) {
-			if(index==0) { return visitor->visit_mult_begin(this*); }
-			else if(index==1) { return visitor->visit_mult_middle(this*); }
-			else if(index==2) { return visitor->visit_mult_end(this*); }
-			//else
-		}
+		void accept(Visitor* visitor, int index);
 };
 
 #endif
