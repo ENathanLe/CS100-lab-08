@@ -31,13 +31,6 @@ class Add : public Base {
 			if(!i) { return p1; }
 			else { return p2; }
 		}
-		
-		std::string accept(Visitor* visitor, int index) {
-			if(index==0) { return visitor->visit_add_begin(this*); }
-			else if(index==1) { return visitor->visit_add_middle(this*); }
-			else if(index==2) { return visitor->visit_add_end(this*); }
-			//else
-		}
 };
 
 #endif
