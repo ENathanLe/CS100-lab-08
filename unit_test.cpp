@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 
+#include "childTesting.hpp"
 #include "op_test.hpp"
 #include "add_test.hpp"
 #include "sub_test.hpp"
