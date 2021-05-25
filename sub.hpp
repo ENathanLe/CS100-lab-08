@@ -31,10 +31,10 @@ class Sub : public Base {
                         if(!i) { return p1; }
                         else { return p2; }
                 }		
-		std::string accept(Visitor* visitor, int index) {
-			if(index==0) { return visitor->visit_sub_begin(this*); }
-			else if(index==1) { return visitor->visit_sub_middle(this*); }
-			else if(index==2) { return visitor->visit_sub_end(this*); }
+		void accept(Visitor* visitor, int index) {
+			if(index==0) { visitor->visit_sub_begin(this); }
+			else if(index==1) { visitor->visit_sub_middle(this); }
+			else if(index==2) { visitor->visit_sub_end(this); }
 			//else
 		}
 };

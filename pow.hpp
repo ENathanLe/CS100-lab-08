@@ -25,10 +25,10 @@ class Pow : public Base {
                if(!i) { return operand1; }
                else { return operand2; }
        	} 
-		std::string accept(Visitor* visitor, int index) {
-			if(index==0) { return visitor->visit_pow_begin(this*); }
-			else if(index==1) { return visitor->visit_pow_middle(this*); }
-			else if(index==2) { return visitor->visit_pow_end(this*); }
+		void accept(Visitor* visitor, int index) {
+			if(index==0) { visitor->visit_pow_begin(this); }
+			else if(index==1) { visitor->visit_pow_middle(this); }
+			else if(index==2) { visitor->visit_pow_end(this); }
 			//else
 		}
     private:
